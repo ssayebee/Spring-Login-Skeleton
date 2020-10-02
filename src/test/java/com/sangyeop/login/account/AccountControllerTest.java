@@ -62,11 +62,11 @@ class AccountControllerTest {
         String PASSWORD = "password";
 
         mockMvc.perform(post("/sign-up")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objMapper.writeValueAsString(Account.builder().email(EMAIL).password(PASSWORD).build()))
+                .param("email", EMAIL)
+                .param("password", PASSWORD)
                 .with(csrf()))
                     .andDo(print())
-                    .andExpect(status().isCreated());
+                    .andExpect(status().isOk());
 
         String savedPassword = accountRepository.findByEmail(EMAIL).get().getPassword();
         Assertions.assertThat(PASSWORD).isNotEqualTo(savedPassword);

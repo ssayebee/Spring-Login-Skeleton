@@ -9,7 +9,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Getter
-@Setter
 @Builder
 public class Account implements Serializable {
 
