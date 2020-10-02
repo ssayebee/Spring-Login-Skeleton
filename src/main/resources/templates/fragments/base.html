@@ -1,0 +1,20 @@
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="baseHead(title, links)">
+    <title th:replace="${title}">Default Title</title>
+    <!-- default styles and scripts -->
+    <link rel="stylesheet" th:href="@{/static/css/base.css}">
+    <!-- placeholder for additional links -->
+    <th:block th:if th:replace="${links}" />
+</head>
+
+<nav th:fragment="nav-default" style="display: flex; justify-content: flex-end">
+    <a th:href="@{/sign-in}" style="text-decoration: none; color: black; padding: 1rem; font-weight: bold"><p>로그인</p></a>
+    <a th:href="@{/sign-up}" style="text-decoration: none; color: black; padding: 1rem; font-weight: bold"><p>회원가입</p></a>
+</nav>
+
+<nav th:fragment="nav-logined" style="display: flex; justify-content: flex-end">
+    <a th:href="@{/logout}" style="text-decoration: none; color: black; padding: 1rem; font-weight: bold"><p>로그아웃</p></a>
+</nav>
+
+</html>

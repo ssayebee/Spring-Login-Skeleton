@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base :: baseHead(~{::title}, ~{::link})">
+    <title>로그인</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+</head>
+<body>
+
+<div th:replace="fragments/base :: nav-default"></div>
+<form th:action="@{/sign-in}" method="post" class="form_border">
+    <h2>로그인</h2>
+    <input class="base_input" type="email" name="username" autofocus>
+    <input class="base_input" type="password" name="password">
+    <button id="sign_in_btn" class="btn" type="submit">로그인</button>
+    <a th:href="@{/sign-up}" style="text-decoration: none">
+        <p style="color: white; font-size: 1rem; text-align: right">회원가입</p>
+    </a>
+</form>
+</body>
+</html>
