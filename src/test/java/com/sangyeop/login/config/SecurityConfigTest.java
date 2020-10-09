@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sangyeop.login.account.Account;
 import com.sangyeop.login.account.AccountRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -46,6 +47,7 @@ class SecurityConfigTest {
 
     @DisplayName("CSRF 필터 테스트")
     @Test
+    @Disabled
     public void postSignUp() throws Exception {
         String EMAIL = "test@test.email";
         String PASSWORD = "password";

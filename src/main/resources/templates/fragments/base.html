@@ -3,7 +3,7 @@
 <head th:fragment="baseHead(title, links)">
     <title th:replace="${title}">Default Title</title>
     <!-- default styles and scripts -->
-    <link rel="stylesheet" th:href="@{/static/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
     <!-- placeholder for additional links -->
     <th:block th:if th:replace="${links}" />
 </head>
